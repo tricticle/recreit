@@ -1,7 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .art {
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -9,9 +46,35 @@
     <form id="subredditForm">
       <input type="text" id="subredditInput" placeholder="Enter subreddit name">
       <input type="submit" value="Generate Art">
-      <input type="button" id="saveArtButton" value="Save Art">
     </form>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    const subredditForm = document.getElementById("subredditForm");
+    const subredditInput = document.getElementById("subredditInput");
+    const art = document.querySelector(".art");
+
+    subredditForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const subreddit = subredditInput.value;
+      const apiUrl = `https://www.reddit.com/r/${subreddit}.json`;
+
+      // Fetch data from Reddit API
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          // Filter URLs of images
+          const imageUrls = data.data.children
+            .filter(post => post.data.post_hint === "image")
+            .map(post => post.data.url);
+
+          // Set a random image as the background
+          const randomIndex = Math.floor(Math.random() * imageUrls.length);
+          art.style.backgroundImage = `url(${imageUrls[randomIndex]})`;
+        })
+        .catch(error => console.error(error));
+    });
+  </script>
 </body>
 </html>
