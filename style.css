@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@200&family=Unica+One&display=swap');
     body{
         display: flexbox;
+        height:90%;
+        width:100%;
         align-items: center;
         justify-content: center;
         background-size: cover;
@@ -16,9 +18,9 @@
     .art {
       width: 100%;
       height: 90vh;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
-      border-radius: 3px;
+      bacjground-repeat: no-repeat;
     }
 
     form {
