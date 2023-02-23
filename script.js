@@ -7,7 +7,7 @@ subredditForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
   const subreddit = subredditInput.value;
-  const apiUrl = `https://www.reddit.com/r/${subreddit}/new.json`;
+  const apiUrl = `https://www.reddit.com/r/${subreddit}/hot.json`;
 
   // Fetch data from Reddit API
   fetch(apiUrl)
