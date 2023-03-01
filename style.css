@@ -8,7 +8,7 @@
   }
 
   20% {
-      background-color: #ffff82;
+      background-color: #b882ff;
   }
 
   40% {
@@ -20,7 +20,7 @@
   }
 
   80% {
-      background-color: #fbff8d;
+      background-color: #d08dff;
   }
 
   100% {
@@ -52,10 +52,15 @@
     }
     form {
       display: flex;
+      height: fit-content;
       flex-direction: row;
       align-items: center;
       gap: 10px;
       margin-top: 25px;
+      flex-wrap: nowrap;
+      align-content: space-around;
+      justify-content: space-around;
+      width: 50svw;
     }
 
     input[type="text"] {
@@ -81,4 +86,6 @@
       transition: var(--tran);
       letter-spacing: 2px;
       font-size: 10px;
+      text-overflow: inherit;
+      color: rgb(255, 255, 255);
     }
