@@ -12,15 +12,15 @@
   }
 
   40% {
-      color: #a0ffa0;
+      color: #000000;
   }
 
   60% {
-      color: rgb(97, 255, 247);
+      color: #000000;
   }
 
   80% {
-      color: #d08dff;
+      color: #b882ff;
   }
 
   100% {
@@ -38,16 +38,17 @@ body{
   height: 100vh;
   width: 100%;
   font-family: 'Bebas Neue', cursive;
+  padding-right: 10px;
 }
 .nav-tab{
-  border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
+  height: 80px;
   width: 100%;
   flex-direction: row;
-  padding: 20px;
+  padding: 5px;
+  border-bottom: 1px solid black;
 }
 
 .nav-tab .image-text{
@@ -56,23 +57,24 @@ body{
   justify-content: center;
   flex-direction: column;
   gap: 3px;
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   
 }
 .nav-tab > .image-text img{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 90%;
 }
 .nav-tab .text{
- font-size: 10px;
+ font-size: 17px;
  color: rgb(0, 0, 0);
 }
 .nav-tab .text:hover{
+  font-size: larger;
   letter-spacing: 1px;
   color: rgb(0, 0, 0);
   transition: var(--tran);
@@ -82,9 +84,10 @@ body{
  align-items: center;
  justify-content:center;
  letter-spacing: 1px;
- padding:69px;
+ padding: 20px;
 }
 .nav-tab .menu{
+  font-size: 20px;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -98,7 +101,7 @@ body{
 }
 .nav-tab > .menu-bar a:hover{
   letter-spacing: 3px;
-  font-size: 10px;
+  font-size: 17px;
   transition: var(--tran);
   animation: color 30s infinite;
 }
@@ -114,11 +117,11 @@ body{
   }
 
   40% {
-      background-color: #a0ffa0;
+      background-color: #50b9ff;
   }
 
   60% {
-      background-color: rgb(97, 255, 247);
+      background-color: #50b9ff;
   }
 
   80% {
@@ -135,10 +138,10 @@ body{
       flex-direction: column;
       align-items: center;
       transition: var(--tran);
-
     }
 
-    .art {
+    .art{
+      position: relative;
       width: 100%;
       height: 90vh;
       background-size: contain;
@@ -160,6 +163,7 @@ body{
     }
 
     input[type="text"] {
+      font-size: 20px;
       padding: 10px;
       border-radius: 5px;
       border: none;
@@ -177,6 +181,7 @@ body{
       border-radius: 50px;
       cursor: pointer;
       font-family: 'Bebas Neue', cursive;
+      font-size: 20px;
     }
 input[type="button"]:hover{
       transition: var(--tran);
@@ -194,5 +199,5 @@ input[type="submit"]:hover{
 }
 input[type="text"]:hover{
   animation: color 20s infinite;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
