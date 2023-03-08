@@ -54,9 +54,6 @@ function setCurrentImageIndex(newIndex) {
   // Make sure the index stays within the bounds of the imageUrls array
   currentImageIndex = (newIndex + imageUrls.length) % imageUrls.length;
 
-  // Set the current image as the source of the img element
-  const img = document.createElement("img");
-  img.src = imageUrls[currentImageIndex];
-  art.innerHTML = "";
-  art.appendChild(img);
+  // Set the current image as the background
+  art.style.backgroundImage = `url(${imageUrls[currentImageIndex]})`;
 }
